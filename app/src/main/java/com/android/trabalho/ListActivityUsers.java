@@ -14,6 +14,7 @@ import java.io.Serializable;
 public class ListActivityUsers extends ListActivity {
 
     public static int position = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
