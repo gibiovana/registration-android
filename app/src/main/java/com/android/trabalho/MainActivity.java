@@ -30,6 +30,7 @@ import com.mobsandgeeks.saripaar.annotation.NotEmpty;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
@@ -58,6 +59,8 @@ public class MainActivity extends AppCompatActivity implements Validator.Validat
     private int day, month, year;
 
     private Validator validator;
+
+    public static List<User> registeredUsers = new ArrayList<User>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,16 +118,18 @@ public class MainActivity extends AppCompatActivity implements Validator.Validat
                 user.setHpFan(checkHP.isChecked());
                 user.setTwilightFan(checkTwilight.isChecked());
                 validator.validate();
+
+                registeredUsers.add(user);
             }
         });
 
         buttonSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ListActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("UserData", user);
-                intent.putExtras(bundle);
+                Intent intent = new Intent(MainActivity.this, ListActivityUsers.class);
+                //Bundle bundle = new Bundle();
+                //bundle.putSerializable("UsersData", user);
+                //intent.putExtras(bundle);
 
                 startActivity(intent);
             }
