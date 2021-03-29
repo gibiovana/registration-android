@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Registration">
         <activity android:name=".ToastActivity"></activity>
-        <activity android:name=".ListActivity" />
+        <activity android:name=".ListActivityUsers" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

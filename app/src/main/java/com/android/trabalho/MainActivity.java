@@ -106,6 +106,7 @@ public class MainActivity extends AppCompatActivity implements Validator.Validat
                 user.setName(textName.getText().toString());
                 user.setEmail(textEmail.getText().toString());
                 user.setPhone(textPhone.getText().toString());
+
                 DateFormat formatter = new SimpleDateFormat("dd/mm/yyyy");
                 Date date = null;
                 try {
@@ -127,10 +128,6 @@ public class MainActivity extends AppCompatActivity implements Validator.Validat
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ListActivityUsers.class);
-                //Bundle bundle = new Bundle();
-                //bundle.putSerializable("UsersData", user);
-                //intent.putExtras(bundle);
-
                 startActivity(intent);
             }
         });
