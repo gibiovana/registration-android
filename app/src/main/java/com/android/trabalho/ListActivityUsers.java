@@ -14,12 +14,13 @@ import java.io.Serializable;
 public class ListActivityUsers extends ListActivity {
 
     public static int position = 0;
+    public ArrayAdapter<User> arrayAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
-        ArrayAdapter<User> arrayAdapter = new ArrayAdapter<User>(this, android.R.layout.simple_list_item_1, MainActivity.registeredUsers);
+        arrayAdapter = new ArrayAdapter<User>(this, android.R.layout.simple_list_item_1, MainActivity.registeredUsers);
         super.setListAdapter(arrayAdapter);
     }
 
@@ -29,6 +30,7 @@ public class ListActivityUsers extends ListActivity {
         this.position = position;
 
         Intent intent = new Intent(this, ToastActivity.class);
+        intent.putExtra("data", arrayAdapter.getItem(position).toString());
 
         startActivity(intent);
     }

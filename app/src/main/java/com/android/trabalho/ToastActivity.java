@@ -13,9 +13,9 @@ public class ToastActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_toast);
 
-        ArrayAdapter<User> arrayAdapter = new ArrayAdapter<User>(this, android.R.layout.simple_list_item_1, MainActivity.registeredUsers);
-        int position = ListActivityUsers.position;
+        Bundle receivedData = getIntent().getExtras();
+        String value = receivedData.getString("data");
 
-        Toast.makeText(this, arrayAdapter.getItem(position).toString(), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, value, Toast.LENGTH_LONG).show();
     }
 }
