@@ -1,5 +1,8 @@
 package com.android.trabalho;
 
+import android.content.Context;
+import android.widget.Toast;
+
 import java.io.Serializable;
 import java.util.Date;
 
@@ -76,5 +79,9 @@ public class User implements Serializable {
                 ", phone='" + phone + '\'' +
                 ", birthDate=" + birthDate +
                 '}';
+    }
+
+    public void showToast(Context context) {
+        Toast.makeText(context,this.toString(), Toast.LENGTH_LONG).show();
     }
 }
